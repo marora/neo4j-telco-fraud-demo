@@ -29,7 +29,7 @@ Fraudsters call and hang up after one ring. Victims call back and are routed to 
 Fraudsters use banks of SIM cards (“SIM Boxes”) to bypass international rates by terminating calls as local traffic.
 
 * **Pattern**: Hundreds of phone numbers linked to the same device/IMEI.
-* [GSMA: SIM Box Fraud](https://www.subex.com/blog/simbox-fraud-challenges-and-ai-powered-solutions-for-telecom-operators/)
+* [SIM Box Fraud](https://www.subex.com/blog/simbox-fraud-challenges-and-ai-powered-solutions-for-telecom-operators/)
 
 ### 🔹 PBX / Toll Fraud
 
