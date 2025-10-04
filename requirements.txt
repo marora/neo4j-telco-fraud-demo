@@ -1,0 +1,14 @@
+# Core libraries
+pandas
+faker
+tqdm
+pyyaml
+neo4j
+pytest
+
+# Jupyter + plotting
+jupyterlab
+matplotlib
+
+# Testing
+pytest

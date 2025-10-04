@@ -1,0 +1,43 @@
+services:
+  neo4j:
+    image: neo4j:5.13
+    container_name: neo4j-telco
+    environment:
+      - NEO4J_AUTH=neo4j/demoPassword123
+      - NEO4J_PLUGINS=["graph-data-science","bloom"]
+    ports:
+      - "7474:7474"   # Neo4j Browser + Bloom
+      - "7687:7687"   # Bolt protocol
+    volumes:
+      - ./data/import:/var/lib/neo4j/import
+      - ./data/plugins:/plugins
+      - ./data/logs:/logs
+      - ./data/db:/data      # persistent database storage
+      - ./load_cypher:/load_cypher
+      - ./queries:/queries
+
+  loader:
+    image: neo4j:5.13
+    container_name: neo4j-loader
+    depends_on:
+      - neo4j
+    volumes:
+      - ./load_cypher:/load_cypher
+    entrypoint: >
+      sh -c "
+        echo '⏳ Waiting for Neo4j to be ready...' &&
+        until cypher-shell -a bolt://neo4j:7687 -u neo4j -p demoPassword123 'RETURN 1' > /dev/null 2>&1; do
+          echo '... still waiting for Neo4j ...';
+          sleep 5;
+        done &&
+        echo '✅ Neo4j is ready, loading data...' &&
+        cypher-shell -a bolt://neo4j:7687 -u neo4j -p demoPassword123 -f /load_cypher/00_constraints.cypher &&
+        cypher-shell -a bolt://neo4j:7687 -u neo4j -p demoPassword123 -f /load_cypher/10_load_subscribers.cypher &&
+        cypher-shell -a bolt://neo4j:7687 -u neo4j -p demoPassword123 -f /load_cypher/20_load_numbers.cypher &&
+        cypher-shell -a bolt://neo4j:7687 -u neo4j -p demoPassword123 -f /load_cypher/30_load_devices.cypher &&
+        cypher-shell -a bolt://neo4j:7687 -u neo4j -p demoPassword123 -f /load_cypher/40_load_cdrs.cypher &&
+        cypher-shell -a bolt://neo4j:7687 -u neo4j -p demoPassword123 -f /load_cypher/50_link_numbers_devices.cypher &&
+        cypher-shell -a bolt://neo4j:7687 -u neo4j -p demoPassword123 -f /load_cypher/99_validate.cypher &&
+        echo '🎉 Data load complete and validated!' &&
+        exit 0
+      "

@@ -1,0 +1,18 @@
+# Fraud simulation parameters
+baseline:
+  calls: 8000
+  subscribers: 800
+  output: "data/import"
+
+fraud:
+  irsf:
+    enabled: true
+    bursts: 6
+    burst_size: 250
+  wangiri:
+    enabled: true
+    attempts: 600
+  simbox:
+    enabled: true
+    device_count: 4
+    numbers_per_device: 90

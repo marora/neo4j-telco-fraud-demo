@@ -1,0 +1,14 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Neo4j data
+data/logs/
+data/import/*.csv
+
+# OS files
+.DS_Store
