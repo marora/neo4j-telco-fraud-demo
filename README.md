@@ -15,28 +15,28 @@ Graphs are a natural fit because fraudsters often operate in **networks of hidde
 Fraudsters generate artificial traffic to **premium-rate destinations**, often in Africa, the Caribbean, or other high-cost regions. Carriers are left with inflated bills.
 
 * **Pattern**: Sudden spikes of calls to premium prefixes like `+882`, `+979`, `+44-9xxx`.
-* [CFCA: IRSF overview](https://cfca.org/international-revenue-share-fraud-irsf/)
+* [IRSF overview](https://www.akamai.com/blog/security/understanding-international-revenue-share-fraud#:~:text=Executive%20summary,What%20is%20IRSF?)
 
 ### 🔹 Wangiri Fraud (“One-Ring Scam”)
 
 Fraudsters call and hang up after one ring. Victims call back and are routed to premium numbers.
 
 * **Pattern**: Many short-duration international calls, followed by callbacks.
-* [Europol: Wangiri alert](https://www.europol.europa.eu/media-press/newsroom/news/wangiri-fraud-europol-warning-public)
+* [Wangiri alert](https://seon.io/resources/dictionary/wangiri-scam-fraud/)
 
 ### 🔹 SIM Box Fraud (Bypass Fraud)
 
 Fraudsters use banks of SIM cards (“SIM Boxes”) to bypass international rates by terminating calls as local traffic.
 
 * **Pattern**: Hundreds of phone numbers linked to the same device/IMEI.
-* [GSMA: SIM Box Fraud](https://www.gsma.com/security/resources/sim-box-fraud/)
+* [GSMA: SIM Box Fraud](https://www.subex.com/blog/simbox-fraud-challenges-and-ai-powered-solutions-for-telecom-operators/)
 
 ### 🔹 PBX / Toll Fraud
 
 Attackers hack into an enterprise PBX system and generate calls to premium destinations (often at night/weekends).
 
 * **Pattern**: Burst of premium calls during off-hours from one subscriber.
-* [FCC: Toll Fraud advisory](https://www.fcc.gov/toll-fraud)
+* [Toll Fraud](https://xorcom.com/choosing-the-wrong-ip-pbx-can-cost-you-in-toll-fraud/)
 
 ---
 
@@ -158,7 +158,7 @@ Open `fraud_analysis.ipynb` and run the cells.
 
 ## 📚 References
 
-* [CFCA Global Fraud Loss Survey 2021](https://cfca.org/fraudloss/)
+* [IRSF overview](https://www.akamai.com/blog/security/understanding-international-revenue-share-fraud#:~:text=Executive%20summary,What%20is%20IRSF?)
 * [GSMA Fraud & Security Resources](https://www.gsma.com/security/)
-* [Europol Wangiri Alert](https://www.europol.europa.eu/media-press/newsroom/news/wangiri-fraud-europol-warning-public)
-* [FCC Toll Fraud Advisory](https://www.fcc.gov/toll-fraud)
+* [Wangiri alert](https://seon.io/resources/dictionary/wangiri-scam-fraud/)
+* [Toll Fraud](https://xorcom.com/choosing-the-wrong-ip-pbx-can-cost-you-in-toll-fraud/)
