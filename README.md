@@ -66,7 +66,7 @@ This schema makes it easy to query for **clusters, anomalies, and hidden connect
 Clone the repo and start everything with Docker Compose:
 
 ```bash
-git clone https://github.com/yourname/neo4j-telco-fraud-demo.git
+git clone https://github.com/marora/neo4j-telco-fraud-demo.git
 cd neo4j-telco-fraud-demo
 docker-compose up --build
 ```
