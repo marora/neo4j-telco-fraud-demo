@@ -4,4 +4,4 @@ WITH d, count(DISTINCT n) AS numberCount
 WHERE numberCount >= 50
 RETURN d.imei AS suspiciousDevice, numberCount
 ORDER BY numberCount DESC
-LIMIT 20;
+LIMIT 10;
